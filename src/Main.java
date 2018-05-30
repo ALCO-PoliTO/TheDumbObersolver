@@ -89,6 +89,14 @@ public class Main {
 				}
 			}
 
+			// Arbitrary cut for the first day
+			for (int i = 0; i < I; i++) {
+				cp.add(cp.eq(X[i][i][0], 1));
+			}
+			// Arbitrary position of node zero
+			for (int k = 1; k < K; k++)
+				cp.add(cp.eq(X[0][0][k], 1));
+
 			cp.add(cp.eq(X[0][0][0], 1));
 			for (int t = 0; t < tables.get(0); t++) {
 				int alpha = t % tables.get(0);
